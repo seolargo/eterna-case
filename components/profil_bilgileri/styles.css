@@ -1,266 +1,221 @@
 /* Reset some default browser styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-    
-  body {
-    background: #0f0f0f; /* Dark background */
-    font-family: Arial, sans-serif;
-    color: #fff;
-    /* Remove centered flex layout so we can have
-       a top and bottom box with independent scrolling. */
-    min-height: 100vh;
-    width: 100%;
-    overflow-x: hidden;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
   
-    .profile {
-        width: 100%;
-        max-width: 375px; /* mimics iPhone 375px width */
-        margin: 0 auto;
-        border-radius: 16px;
-        /* Extra space at bottom so content doesn't go under the fixed button */
-        padding-bottom: 100px;
-        overflow: hidden;
+body {
+  background: #0f0f0f; /* Dark background */
+  font-family: Arial, sans-serif;
+  color: #fff;
 
-        margin-top: 10px;
-    }
+  /* The body is now just a normal block - 
+     The "sticky footer" logic will be handled by .profile */
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden; /* avoid horizontal scroll if not needed */
+}
 
-    .profile__title-icon {
-        fill: #658AAD;
-        
-        width: 28px;
-        height: 28px;
+/* 
+  .profile:
+  Use flex layout, column direction. 
+  min-height: 100vh ensures it spans the full viewport. 
+*/
+.profile {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-        vertical-align: text-bottom;
-    }
-  
-  /* 
-    ELEMENT: "profile__header"
-    Formerly .header
-  */
-  .profile__header {
-    position: relative;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 18px;
-    font-weight: 600;
-    border-radius: 0 0 16px 16px;
-  }
-  
-  /* 
-    ELEMENT: "profile__header-back-button"
-    Formerly .header .back-button 
-  */
-  .profile__header-back-button {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 22px;
-    background: none;
-    border: none;
-    color: #fff;
-    background: #2e2e34;
-    width: 40px;               /* Button width */
-    height: 40px;              /* Button height */
-    display: flex;
-    align-items: center;       /* Vertically center the SVG */
-    justify-content: center;   /* Horizontally center the SVG */
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .profile__title {
-    /* font-family: Inter, sans-serif; */
+  /* Constrain width (like a phone), center horizontally */
+  max-width: 375px;
+  margin: 0 auto;
+  border-radius: 16px;
+}
 
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: -0.4px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+/* The main content area grows to fill space pushing footer down */
+.profile__content {
+  flex: 1; /* Key: this area expands or shrinks to fill vertical space */
+  padding-bottom: 20px;
+  overflow-x: hidden;  /* optional, if your content might get wide */
+  overflow-y: auto;    /* let user scroll if content is taller than screen */
+  
+  /* margin-top is optional if you want spacing from top */
+  margin-top: 10px;
+}
 
-    margin-top: 10px;
-  }
-  
-  .profile__title--top {
-    /*
-        font-family: Inter, sans-serif;
-    */
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 28px;
-    letter-spacing: -0.4px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-  }
-  
-  /* 
-    ELEMENT: "profile__avatar"
-    Formerly .avatar-container
-  */
-  .profile__avatar {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    position: relative;
-  }
-  
-  /* 
-    ELEMENT: "profile__avatar-img"
-    Formerly .avatar-container img
-  */
-  .profile__avatar-img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    background: #666;
-  }
-  
-  /* 
-    ELEMENT: "profile__avatar-edit"
-    Formerly .avatar-edit-icon
-  */
-  .profile__avatar-edit {
-    position: absolute;
-    bottom: 0;
-    right: 40%;
-    background: #fff;
-    color: #fff; /* no longer needed if the background is white */
-    font-size: 14px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    border: 2px solid #1c1c1e;
-  }
+/* Footer sits below .profile__content. 
+   No absolute/fixed - it simply sits at the bottom if content is short, 
+   or below the scroll if content is tall. */
+.profile__footer {
+  /* No position relative/fixed/absolute needed */
+  padding: 16px;
+  display: flex;
+  justify-content: center;
 
-  .profile__header-subtitle {
-    /*
-    font-family: Inter;
-    */
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: -0.4000000059604645px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
+  /* Optional background behind the footer */
+  /* background: #1c1c1e; */
+}
+
+/* Button styling */
+.profile__footer-button {
+  width: 100%;
+  max-width: 340px; 
+  padding: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #a099ff; /* Purple-ish button */
+  color: #333; 
+  transition: background 0.3s ease;
+  letter-spacing: -0.4px;
+  text-align: center;
+}
+
+.profile__footer-button:hover {
+  background: #b2a3ff; /* hover color if desired */
+}
+
+/* 
+  HEADER, TITLE, AVATAR, etc. 
+  (Mostly the same as your original classes) 
+*/
+
+.profile__header {
+  position: relative; 
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 0 0 16px 16px;
+}
+
+.profile__header-back-button {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  background: #2e2e34;
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.profile__header-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.4px;
+  text-align: center;
+}
+
+.profile__title {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: -0.4px;
+  text-align: center;
+  margin-top: 10px;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+.profile__title-icon {
+  fill: #658AAD;
+  width: 28px;
+  height: 28px;
+  vertical-align: text-bottom;
+}
+
+/* AVATAR */
+.profile__avatar {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.profile__avatar-image {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #666;
+}
+
+.profile__avatar-edit {
+  position: absolute;
+  bottom: 0;
+  right: 40%;
+  background: #fff;
+  font-size: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid #1c1c1e;
+}
+
+.profile__avatar-edit-icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+/* FORM */
+.profile__form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.profile__form-group {
+  position: relative;
+  margin-bottom: 0;
+}
+
+.profile__form-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.profile__form-input {
+  width: 100%;
+  padding: 12px 12px 12px 50px; 
+  border-radius: 12px;
+  height: 56px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: #2c2c2e;
+  color: #B0B0B0;
+}
+
+/* Responsive: smaller screens */
+@media (max-width: 480px) {
+  .profile {
+    border-radius: 0;
   }
-  
-  /* 
-    ELEMENT: "profile__avatar-edit-icon"
-    The <img> inside .profile__avatar-edit
-  */
-  .profile__avatar-edit-icon {
-    display: block;
-    width: 16px; 
-    height: 16px;
+  .profile__avatar-image {
+    width: 70px;
+    height: 70px;
   }
-  
-  .profile__form {
-    display: flex;
-    flex-direction: column;
-    padding: 0 16px;
-    gap: 16px;
-  }
-  
-  .profile__form-group {
-    position: relative; /* for absolute-positioned icon */
-    margin-bottom: 0px;
-  }
-  
-  /* 
-    ELEMENT: "profile__form-icon"
-    Formerly .input-icon
-  */
-  .profile__form-icon {
-    position: absolute;
-    top: 50%;
-    left: 12px;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    pointer-events: none; /* So clicks go through to the input */
-  }
-  
-  .profile__form-input {
-    width: 100%;
-    padding: 12px 12px 12px 50px; 
-    border-radius: 12px;
-    height: 56px;
-    border: none;
-    outline: none;
-    font-size: 15px;
-    background: #2c2c2e;
-    color: #B0B0B0;
-  }
-  
-  /* 
-    ELEMENT: "profile__footer"
-    Formerly .bottom-box
-  */
-  .profile__footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 16px;
-    display: flex;
-    justify-content: center;
-    /* Add border-top or shadow if desired */
-  }
-  
-  .profile__footer-button {
-    width: 100%;
-    max-width: 340px; 
-    padding: 14px;
-    font-size: 16px;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #a099ff; /* Purple-ish button */
-    color: #333; 
-    transition: background 0.3s ease;
-  
-    /* font-family: Inter, sans-serif; */
-    font-weight: bold;
-    line-height: 21px;
-    letter-spacing: -0.4px;
-    text-align: center;
-    text-underline-position: from-font;
-    text-decoration-skip-ink: none;
-  }
-  
-  .profile__footer-button:hover {
-    background: #a099ff; /* same color, or pick a lighter/darker variant */
-  }
-  
-  /* Responsive behavior */
-  @media (max-width: 480px) {
-    .profile {
-      border-radius: 0;
-      padding-bottom: 120px; /* Increase if needed for the bottom box */
-    }
-  
-    /* If you had .header .title at smaller screens, you can adapt for BEM: */
-    .profile__header {
-      font-size: 16px;
-    }
-  
-    .profile__avatar-img {
-      width: 70px;
-      height: 70px;
-    }
-  }
-  
+}

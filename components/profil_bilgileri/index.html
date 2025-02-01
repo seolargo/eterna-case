@@ -8,11 +8,12 @@
 </head>
 <body>
 
-  <!-- The main "profile" Block -->
-  <div class="profile">
+<div class="profile">
+  
+  <!-- All main content goes in here -->
+  <div class="profile__content">
     <!-- Header Element -->
     <div class="profile__header">
-      <!-- Back button element -->
       <button class="profile__header-back-button" aria-label="Geri">
         <svg 
           width="24" 
@@ -30,21 +31,21 @@
           />
         </svg>
       </button>
-      <!-- Subheader text element -->
       <h1 class="profile__header-subtitle">Profil</h1>
     </div>
 
     <!-- Main title element -->
     <h1 class="profile__title">
-        Profilini Düzenle
-        <svg 
-            class="profile__title-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20" height="20" viewBox="0 0 24 24"
-            fill="currentColor"
-        >
-            <path d="M12 4a4 4 0 110 8 4 4 0 010-8zm0 14c-4 0-8 2-8 4h16c0-2-4-4-8-4z"/>
-        </svg>
+      Profilini Düzenle
+      <svg 
+        class="profile__title-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="20" height="20" 
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path d="M12 4a4 4 0 110 8 4 4 0 010-8zm0 14c-4 0-8 2-8 4h16c0-2-4-4-8-4z"/>
+      </svg>
     </h1>
 
     <!-- Avatar Element -->
@@ -55,7 +56,6 @@
         alt="Avatar"
       />
       <div class="profile__avatar-edit" id="avatar-edit">
-        <!-- Camera icon (separate Element) -->
         <img 
           class="profile__avatar-edit-icon"
           src="camera.svg" 
@@ -109,16 +109,18 @@
         />
       </div>
     </form>
+  </div>
+  <!-- end .profile__content -->
 
-  </div> <!-- end .profile -->
+  <!-- Footer at the bottom of .profile -->
+  <div class="profile__footer">
+    <button type="button" class="profile__footer-button">
+      Güncelle
+    </button>
+  </div>
 
-  <!-- Footer (pinned at bottom) could be another Element or a separate Block -->
-    <div class="profile__footer">
-        <button type="button" class="profile__footer-button">
-            Güncelle
-        </button>
-    </div>
+</div> <!-- end .profile -->
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
