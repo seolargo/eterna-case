@@ -28,7 +28,6 @@ body {
   min-height: 100vh;
 
   /* Constrain width (like a phone), center horizontally */
-  max-width: 375px;
   margin: 0 auto;
   border-radius: 16px;
 }
@@ -60,7 +59,6 @@ body {
 /* Button styling */
 .profile__footer-button {
   width: 100%;
-  max-width: 340px; 
   padding: 14px;
   font-size: 16px;
   font-weight: 600;
@@ -138,25 +136,34 @@ body {
 
 /* AVATAR */
 .profile__avatar {
-  display: flex;
+  display: inline-flex; /* Keeps the avatar and icon together */
   justify-content: center;
+  align-items: center;
   margin: 20px 0;
-  position: relative;
+  position: relative; /* Enables absolute positioning for the edit icon */
+  width: 90px; /* Ensures consistent avatar size */
+  height: 90px;
+  overflow: hidden; /* Prevents overflow of the edit icon */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+  cursor: pointer;
+  left: 50%; /* Move to 50% of the parent's width */
+  transform: translateX(-50%); /* Adjust for the element's own width */
 }
 
 .profile__avatar-image {
-  width: 90px;
-  height: 90px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   object-fit: cover;
   background: #666;
 }
 
+/* Edit Icon Styling */
 .profile__avatar-edit {
   position: absolute;
-  bottom: 0;
-  right: 40%;
-  background: #fff;
+  bottom: 5px;
+  right: 5px; /* Positioned neatly in the bottom-right corner */
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
   font-size: 14px;
   width: 24px;
   height: 24px;
@@ -166,12 +173,14 @@ body {
   justify-content: center;
   cursor: pointer;
   border: 2px solid #1c1c1e;
+  transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
 }
 
 .profile__avatar-edit-icon {
   display: block;
   width: 14px;
   height: 14px;
+  transition: transform 0.3s ease;
 }
 
 /* FORM */
