@@ -1,62 +1,40 @@
-/* Reset some default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-  
+
 body {
-  background: #0f0f0f; /* Dark background */
+  background: #0f0f0f;
   font-family: Arial, sans-serif;
   color: #fff;
-
-  /* The body is now just a normal block - 
-     The "sticky footer" logic will be handled by .profile */
   min-height: 100vh;
   width: 100%;
-  overflow-x: hidden; /* avoid horizontal scroll if not needed */
+  overflow-x: hidden;
 }
 
-/* 
-  .profile:
-  Use flex layout, column direction. 
-  min-height: 100vh ensures it spans the full viewport. 
-*/
 .profile {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
-  /* Constrain width (like a phone), center horizontally */
   margin: 0 auto;
   border-radius: 16px;
 }
 
-/* The main content area grows to fill space pushing footer down */
 .profile__content {
-  flex: 1; /* Key: this area expands or shrinks to fill vertical space */
+  flex: 1;
   padding-bottom: 20px;
-  overflow-x: hidden;  /* optional, if your content might get wide */
-  overflow-y: auto;    /* let user scroll if content is taller than screen */
-  
-  /* margin-top is optional if you want spacing from top */
+  overflow-x: hidden;
+  overflow-y: auto;
   margin-top: 10px;
 }
 
-/* Footer sits below .profile__content. 
-   No absolute/fixed - it simply sits at the bottom if content is short, 
-   or below the scroll if content is tall. */
 .profile__footer {
-  /* No position relative/fixed/absolute needed */
   padding: 16px;
   display: flex;
   justify-content: center;
-
-  /* Optional background behind the footer */
-  /* background: #1c1c1e; */
 }
 
-/* Button styling */
 .profile__footer-button {
   width: 100%;
   padding: 14px;
@@ -65,24 +43,19 @@ body {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #a099ff; /* Purple-ish button */
-  color: #333; 
+  background: #a099ff;
+  color: #333;
   transition: background 0.3s ease;
   letter-spacing: -0.4px;
   text-align: center;
 }
 
 .profile__footer-button:hover {
-  background: #b2a3ff; /* hover color if desired */
+  background: #b2a3ff;
 }
 
-/* 
-  HEADER, TITLE, AVATAR, etc. 
-  (Mostly the same as your original classes) 
-*/
-
 .profile__header {
-  position: relative; 
+  position: relative;
   text-align: center;
   padding: 20px 0;
   font-size: 18px;
@@ -102,8 +75,8 @@ body {
   width: 40px;
   height: 40px;
   display: flex;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -123,8 +96,6 @@ body {
   letter-spacing: -0.4px;
   text-align: center;
   margin-top: 10px;
-  text-underline-position: from-font;
-  text-decoration-skip-ink: none;
 }
 
 .profile__title-icon {
@@ -134,20 +105,19 @@ body {
   vertical-align: text-bottom;
 }
 
-/* AVATAR */
 .profile__avatar {
-  display: inline-flex; /* Keeps the avatar and icon together */
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   margin: 20px 0;
-  position: relative; /* Enables absolute positioning for the edit icon */
-  width: 90px; /* Ensures consistent avatar size */
+  position: relative;
+  width: 90px;
   height: 90px;
-  overflow: hidden; /* Prevents overflow of the edit icon */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds a subtle shadow */
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  left: 50%; /* Move to 50% of the parent's width */
-  transform: translateX(-50%); /* Adjust for the element's own width */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .profile__avatar-image {
@@ -158,12 +128,11 @@ body {
   background: #666;
 }
 
-/* Edit Icon Styling */
 .profile__avatar-edit {
   position: absolute;
   bottom: 5px;
-  right: 5px; /* Positioned neatly in the bottom-right corner */
-  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+  right: 5px;
+  background: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   width: 24px;
   height: 24px;
@@ -173,7 +142,7 @@ body {
   justify-content: center;
   cursor: pointer;
   border: 2px solid #1c1c1e;
-  transition: background 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .profile__avatar-edit-icon {
@@ -183,7 +152,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* FORM */
 .profile__form {
   display: flex;
   flex-direction: column;
@@ -208,7 +176,7 @@ body {
 
 .profile__form-input {
   width: 100%;
-  padding: 12px 12px 12px 50px; 
+  padding: 12px 12px 12px 50px;
   border-radius: 12px;
   height: 56px;
   border: none;
@@ -218,7 +186,6 @@ body {
   color: #B0B0B0;
 }
 
-/* Responsive: smaller screens */
 @media (max-width: 480px) {
   .profile {
     border-radius: 0;
