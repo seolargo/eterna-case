@@ -34,7 +34,9 @@
     <!-- Title with "Pro" badge -->
     <h1 class="subscription__title">
       MusicAI 
-      <span class="subscription__title-badge">PRO</span>
+      <span class="subscription__title-badge">
+        PRO
+        </span>
     </h1>
   </header>
   
@@ -48,37 +50,46 @@
     <!-- Plan selection card -->
     <div class="subscription__plan-card">
       <!-- Monthly -->
-      <label class="subscription__plan-option">
+        <label class="subscription__plan-option">
         <div class="pretty p-icon p-round p-smooth">
-            <input type="radio" name="plan" value="monthly" />
-            <div class="state p-success">
-                <i class="icon mdi mdi-check"></i>
-                <label>Aylık</label>
-            </div>
+        <input type="radio" name="plan" value="monthly" />
+        <div class="state p-success">
+            <i class="icon mdi mdi-check"></i>
+            <label></label>
         </div>
+        </div>
+        
+        <div class="subscription__plan-info">
+            <!-- A single row that has 100% width -->
+            <div class="subscription__plan-row">
+            <div>Aylık</div> 
+            </div>
+            <!-- Price on its own line below -->
+            <div class="subscription__plan-price">₺3.99 / aylık</div>
+        </div>
+    </label>
     
-        <div class="subscription__plan-info">
-          <div class="subscription__plan-price">₺3.99 / aylık</div>
-        </div>
-      </label>
-
       <!-- Yearly -->
-      <label class="subscription__plan-option subscription__plan-option--selected">
-        <div class="pretty p-icon p-round p-smooth">
-            <input type="radio" name="plan" value="yearly" checked />
-            <div class="state p-success">
-                <i class="icon mdi mdi-check"></i>
-                <label>Yıllık</label>
-            </div>
-        </div>
+    <label class="subscription__plan-option subscription__plan-option--selected">
+    <div class="pretty p-icon p-round p-smooth">
+      <input type="radio" name="plan" value="yearly" checked />
+      <div class="state p-success">
+        <i class="icon mdi mdi-check"></i>
+        <label></label>
+      </div>
+    </div>
+  
+    <div class="subscription__plan-info">
+      <div class="subscription__plan-row">
+        <div>Yıllık</div>
+        
+      </div>
+      <div class="subscription__plan-price">₺19.99 / yıllık</div>
+    </div>
 
-        <div class="subscription__plan-info">
-          <div class="subscription__plan-name">
-            <span class="subscription__plan-tag">AVANTAJLI</span>
-          </div>
-          <div class="subscription__plan-price">₺19.99 / yıllık</div>
-        </div>
-      </label>
+    <span class="subscription__plan-tag">AVANTAJLI</span>
+  </label>
+  
     </div>
 
     <!-- Features list -->
@@ -123,23 +134,22 @@
     </ul>
   </main>
 
-  <!-- Footer with button and small text -->
-  <footer class="subscription__footer">
-    <button class="subscription__footer-upgrade">
-      <svg 
-        viewBox="0 0 24 24" 
-        class="subscription__footer-upgrade-icon"
-        fill="currentColor"
-      >
-        <path d="M17 4H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2zm-3 11H7v-2h7v2zm3-4H7V9h10v2z" />
-      </svg>
-      Hemen Yükselt
-    </button>
-    <p class="subscription__footer-text">
-      3 gün ücretsiz dene, sonra ₺19.99 / yıllık. 
-      İstediğin zaman iptal et.
-    </p>
-  </footer>
+    <!-- Footer with button and small text -->
+    <footer class="subscription__footer">
+        <button class="subscription__footer-upgrade">
+            <img 
+                class="profile__avatar-edit-icon"
+                src="fi_66834.svg" 
+                alt="Camera Icon" 
+                style="width: 16px; height: 16px;"
+            />
+            <div>Hemen Yükselt</div>
+        </button>
+        <p class="subscription__footer-text">
+            3 gün ücretsiz dene, sonra ₺19.99 / yıllık. 
+            İstediğin zaman iptal et.
+        </p>
+    </footer>
 </div>
 
 <script src="script.js"></script>

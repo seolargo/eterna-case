@@ -27,7 +27,7 @@
     min-height: 100vh;
   
     /* For that purple → dark gradient background: */
-    background: linear-gradient(180deg, #9a88f8 0%, #0f0f0f 60%);
+    background: linear-gradient(180deg, #9a88f8 30%, #0f0f0f 60%);
   }
   
   /* Header */
@@ -55,6 +55,8 @@
   
   /* Title + "Pro" badge */
   .subscription__title {
+    width: 128px;
+    height: 28px;
     font-size: 20px;
     color: #000;
     font-weight: 600;
@@ -66,9 +68,15 @@
   
   .subscription__title-badge {
     background: #000;
+    width: 36px;
+    height: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #fff;
     padding: 2px 6px;
-    font-size: 12px;
+    font-size: 11px;
     border-radius: 12px;
   }
   
@@ -93,7 +101,7 @@
   .subscription__plan-card {
     background: rgba(0,0,0,0.2);
     border-radius: 12px;
-    padding: 16px;
+    padding: 8px 16px;
     margin: 0 auto 16px;  /* center horizontally, some bottom margin */
     max-width: 340px;
   }
@@ -101,7 +109,7 @@
   /* Each plan option (monthly/yearly) */
   .subscription__plan-option {
     display: flex;
-    align-items: flex-start; /* keep radio + text aligned at top */
+    align-items: center; /* keep radio + text aligned at top */
     gap: 12px;
     padding: 12px 0;
     cursor: pointer;
@@ -124,13 +132,13 @@
   }
 
     .subscription__plan-option--selected {
-        background: rgba(255, 255, 255, 0.1);
         border-radius: 8px;
     }
   
     .subscription__plan-info {
-        display: flex;
-        flex-direction: column;
+      width: 100%; /* So the info area can fill the plan card width */
+      display: flex;
+      flex-direction: column;
     }
   
     .subscription__plan-name {
@@ -142,10 +150,15 @@
     }
   
     .subscription__plan-tag {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
         font-size: 10px;
         color: #000; 
         background: #fff;
-        padding: 2px 6px;
+        padding: 8px 16px;
+        font-weight: bold;
         border-radius: 4px;
     }
   
@@ -167,22 +180,32 @@
   .subscription__features {
     list-style: none;
     margin: 0;
-    padding: 0 16px;
-  
+    padding: 0 10px;
     /* We keep the vertical layout with gap between items */
     display: flex;
     flex-direction: column;
     gap: 12px;
     /* If you'd also like to center the entire list itself in the container: */
     align-items: center;
+
+    margin-top: 20px;
+  }
+
+  /* The container for "Yıllık" + "AVANTAJLI" in one line */
+  .subscription__plan-row {
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: space-between; /* “Yıllık” on left, “AVANTAJLI” on right */
+    width: 100%;                   /* Make this row span the entire plan card width */
   }
   
   .subscription__features li {
-    /* Each row: icon + text horizontally centered */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;       /* space between icon and text */
+    align-items: center;   /* Keep them vertically aligned */
+    justify-content: flex-start; /* Left-align everything, not centered */
+    gap: 8px;
+    width: 100%;          /* Ensures each list item spans 100% width */
     font-size: 14px;
   }
   
@@ -205,6 +228,7 @@
     display: inline-flex;       /* or "flex" */
     justify-content: center;    /* horizontally center content */
     align-items: center;        /* vertically center content */
+    vertical-align: middle;
     gap: 8px;                   /* spacing between icon and text */
     /* Other existing styles */
     background: #a099ff;
