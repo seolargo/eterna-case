@@ -1,86 +1,106 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ayarlar</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
-  <div class="settings-page">
-    <header class="settings-page__header">
-      <h1 class="settings-page__title">Ayarlar</h1>
-    </header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Ayarlar</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div class="settings-page">
+            <header class="settings-page__header">
+                <h1 class="settings-page__title">
+                    Ayarlar
+                </h1>
+            </header>
 
-    <div class="settings-page__card settings-page__card--profile">
-      <div class="settings-page__profile-left">
-        <img src="./images (1).png" alt="Avatar" class="settings-page__avatar"/>
-        <span class="settings-page__name">Lorem Ipsum</span>
-      </div>
-      <span class="settings-page__chevron">&gt;</span>
-    </div>
+            <div class="settings-page__card settings-page__card--profile">
+                <div class="settings-page__profile-left">
+                    <img 
+                        src="./images (1).png" 
+                        alt="Avatar" 
+                        class="settings-page__avatar"
+                    />
+                    <span class="settings-page__name">
+                        Lorem Ipsum
+                    </span>
+                </div>
+                <span class="settings-page__chevron">&gt;</span>
+            </div>
 
-    <div class="settings-page__card">
-      <div class="settings-page__item">
-        <span>Abonelikler</span>
-        <span class="settings-page__chevron">&gt;</span>
-      </div>
-      <div class="settings-page__item">
-        <span>Kayıtlı Kartlarım</span>
-        <span class="settings-page__chevron">&gt;</span>
-      </div>
-    </div>
+            <div class="settings-page__card">
+                <div class="settings-page__item">
+                    <span>Abonelikler</span>
+                    <span class="settings-page__chevron">&gt;</span>
+                </div>
+                <div class="settings-page__item">
+                    <span>Kayıtlı Kartlarım</span>
+                    <span class="settings-page__chevron">&gt;</span>
+                </div>
+            </div>
 
-    <div class="settings-page__card">
-      <div class="settings-page__item">
-        <span>Bildirimler</span>
-        <label class="settings-page__switch">
-          <input type="checkbox" checked/>
-          <span class="settings-page__slider settings-page__slider--round"></span>
-        </label>
-      </div>
-      <div class="settings-page__item">
-        <span>Dil</span>
-        <div class="settings-page__language-right">
-          <span>English</span>
-          <span class="settings-page__chevron">&gt;</span>
+            <div class="settings-page__card">
+                <div class="settings-page__item">
+                    <span>Bildirimler</span>
+                    <label class="settings-page__switch">
+                        <input type="checkbox" checked/>
+                        <span class="settings-page__slider settings-page__slider--round"></span>
+                    </label>
+                </div>
+                <div class="settings-page__item">
+                    <span>Dil</span>
+                    <div class="settings-page__language-right">
+                        <span>English</span>
+                        <span class="settings-page__chevron">&gt;</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-page__card">
+                <div class="settings-page__item">
+                    <span>Destek</span>
+                    <span class="settings-page__chevron">&gt;</span>
+                </div>
+                <div class="settings-page__item">
+                    <span>Gizlilik Politikası</span>
+                    <span class="settings-page__chevron">&gt;</span>
+                </div>
+                <div class="settings-page__item">
+                    <span>Bizi Değerlendirin</span>
+                    <span class="settings-page__chevron">&gt;</span>
+                </div>
+            </div>
+
+            <div class="settings-page__card settings-page__card--logout">
+                <div class="settings-page__item settings-page__item--logout">
+                    <span>Çıkış Yap</span>
+                    <span class="settings-page__chevron">&gt;</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-
-    <div class="settings-page__card">
-      <div class="settings-page__item">
-        <span>Destek</span>
-        <span class="settings-page__chevron">&gt;</span>
-      </div>
-      <div class="settings-page__item">
-        <span>Gizlilik Politikası</span>
-        <span class="settings-page__chevron">&gt;</span>
-      </div>
-      <div class="settings-page__item">
-        <span>Bizi Değerlendirin</span>
-        <span class="settings-page__chevron">&gt;</span>
-      </div>
-    </div>
-
-    <div class="settings-page__card settings-page__card--logout">
-      <div class="settings-page__item settings-page__item--logout">
-        <span>Çıkış Yap</span>
-        <span class="settings-page__chevron">&gt;</span>
-      </div>
-    </div>
-  </div>
-
-  <footer class="bottom-nav">
-    <button class="bottom-nav__btn">
-      <img class="bottom-nav__icon" src="home (1).svg" alt="Home Icon"/>
-    </button>
-    <button class="bottom-nav__btn">
-      <img class="bottom-nav__icon" src="chart.svg" alt="Chart Icon"/>
-    </button>
-    <button class="bottom-nav__btn bottom-nav__btn--active">
-      <img class="bottom-nav__icon" src="Active.svg" alt="Active Icon"/>
-    </button>
-  </footer>
-</body>
+        
+        <footer class="bottom-nav">
+            <button class="bottom-nav__btn">
+                <img 
+                    class="bottom-nav__icon" 
+                    src="../../assets/home (1).svg" 
+                    alt="Home Icon"
+                />
+            </button>
+            <button class="bottom-nav__btn">
+                <img 
+                    class="bottom-nav__icon" 
+                    src="../../assets/chart.svg" 
+                    alt="Chart Icon"
+                />
+            </button>
+            <button class="bottom-nav__btn bottom-nav__btn--active">
+                <img 
+                    class="bottom-nav__icon" 
+                    src="../../assets/Active.svg" 
+                    alt="Active Icon"
+                />
+            </button>
+        </footer>
+    </body>
 </html>
