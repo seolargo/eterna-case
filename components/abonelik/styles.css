@@ -1,270 +1,224 @@
-/* Reset browser defaults */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body is just a container for .subscription */
-  body {
-    font-family: Arial, sans-serif;
-    background: #0f0f0f;
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-  
-  /* 
-    .subscription is our main wrapper.
-    We'll use the flex "sticky footer" approach:
-      - Make it a flex column.
-      - .subscription__content grows (flex: 1).
-      - .subscription__footer sits at the bottom if content is short or below if long.
-  */
-  .subscription {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  
-    /* For that purple → dark gradient background: */
-    background: linear-gradient(180deg, #9a88f8 30%, #0f0f0f 60%);
-  }
-  
-  /* Header */
-  .subscription__header {
-    position: relative;        /* allows absolute positioning of back button */
-    display: flex;
-    align-items: center;       /* vertically center items in header */
-    justify-content: center;   /* horizontally center items in header */
-    padding: 16px;
-  }
-  
-  .subscription__header-back {
-    position: absolute;  /* pinned to the left, doesn't affect centering */
-    left: 16px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #000;
-  }
-  
-  .subscription__header-back svg {
-    width: 24px;
-    height: 24px;
-  }
-  
-  /* Title + "Pro" badge */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.subscription {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #9a88f8 30%, #0f0f0f 60%);
+}
+
+.subscription__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.subscription__back-button {
+  position: absolute;
+  left: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+}
+
+.subscription__back-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.subscription__title {
+  width: 128px;
+  height: 28px;
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.subscription__badge {
+  background: #000;
+  width: 36px;
+  height: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 11px;
+  border-radius: 12px;
+}
+
+.subscription__content {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.subscription__subtitle {
+  text-align: center;
+  margin: 8px 0 16px 0;
+  font-size: 14px;
+  opacity: 0.9;
+  color: #000;
+}
+
+.subscription__plan-card {
+  background: #1c1c20;
+  border-radius: 12px;
+  padding: 8px 16px;
+  margin: 0 auto 16px;
+  max-width: 340px;
+}
+
+.subscription__plan-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  cursor: pointer;
+  color: #fff;
+}
+
+.subscription__plan-option:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.pretty.p-icon.p-round.p-smooth input[type="radio"]:checked ~ .state.p-success i.icon {
+  background-color: #fff !important;
+  color: #000 !important;
+}
+
+.subscription__plan-option--selected {
+  border-radius: 8px;
+}
+
+.subscription__plan-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subscription__plan-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subscription__plan-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #000;
+  background: #fff;
+  padding: 8px 16px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.subscription__plan-price {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-top: 4px;
+}
+
+.subscription__section-title {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.subscription__features {
+  list-style: none;
+  margin: 0;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.subscription__feature-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.subscription__icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
+}
+
+.subscription__footer {
+  flex-shrink: 0;
+  padding: 16px;
+  background: #0f0f0f;
+  text-align: center;
+}
+
+.subscription__upgrade-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  gap: 8px;
+  background: #a099ff;
+  color: #0f0f0f;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 340px;
+}
+
+.subscription__upgrade-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.subscription__footer-text {
+  margin-top: 8px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+@media (max-width: 480px) {
   .subscription__title {
-    width: 128px;
-    height: 28px;
-    font-size: 20px;
-    color: #000;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px; /* space between "MusicAI" and "PRO" badge */
-    margin: 0;  /* remove default h1 margin if desired */
+    font-size: 18px;
   }
-  
-  .subscription__title-badge {
-    background: #000;
-    width: 36px;
-    height: 20px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    padding: 2px 6px;
-    font-size: 11px;
-    border-radius: 12px;
-  }
-  
-  /* Main Content */
-  .subscription__content {
-    flex: 1; 
-    padding: 0 16px;
-    /* Optional top padding if you want spacing under the header */
-    /* We rely on .subscription__header for top space, but you can do more here. */
-  }
-  
-  /* Subtitle text */
-  .subscription__subtitle {
-    text-align: center;
-    margin: 8px 0 16px 0;
-    font-size: 14px;
-    opacity: 0.9;
-    color: #000
-  }
-  
-  /* Plan Card */
-  .subscription__plan-card {
-    background: rgba(0,0,0,0.2);
-    border-radius: 12px;
-    padding: 8px 16px;
-    margin: 0 auto 16px;  /* center horizontally, some bottom margin */
-    max-width: 340px;
-  }
-  
-  /* Each plan option (monthly/yearly) */
-  .subscription__plan-option {
-    display: flex;
-    align-items: center; /* keep radio + text aligned at top */
-    gap: 12px;
-    padding: 12px 0;
-    cursor: pointer;
-    color: #fff; /* ensure text is white within this area */
-  }
-
-    .subscription__plan-option:not(:last-child) {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-  
-    .subscription__plan-option input {
-        accent-color: #ff00ff; /* pink/purple radio indicator */
-        margin-top: 4px;       /* small offset to align with text */
-    }
-
-    /* Target the icon background when checked */
-  .pretty.p-icon.p-round.p-smooth input[type="radio"]:checked ~ .state.p-success i.icon {
-    background-color: #fff !important; /* The circle behind the check */
-    color: #000 !important;           /* The check (mdi-check) color */
-  }
-
-    .subscription__plan-option--selected {
-        border-radius: 8px;
-    }
-  
-    .subscription__plan-info {
-      width: 100%; /* So the info area can fill the plan card width */
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .subscription__plan-name {
-        font-weight: 600;
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-  
-    .subscription__plan-tag {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      vertical-align: middle;
-        font-size: 10px;
-        color: #000; 
-        background: #fff;
-        padding: 8px 16px;
-        font-weight: bold;
-        border-radius: 4px;
-    }
-  
-    .subscription__plan-price {
-        font-size: 14px;
-        opacity: 0.9;
-        margin-top: 4px; /* small space below the plan name */
-    }
-  
-  /* Features Title */
-  .subscription__section-title {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.8;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-  }
-  
-  .subscription__features {
-    list-style: none;
-    margin: 0;
-    padding: 0 10px;
-    /* We keep the vertical layout with gap between items */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    /* If you'd also like to center the entire list itself in the container: */
-    align-items: center;
-
-    margin-top: 20px;
-  }
-
-  /* The container for "Yıllık" + "AVANTAJLI" in one line */
-  .subscription__plan-row {
-    display: flex;
-    align-items: center;
-    vertical-align: middle;
-    justify-content: space-between; /* “Yıllık” on left, “AVANTAJLI” on right */
-    width: 100%;                   /* Make this row span the entire plan card width */
-  }
-  
-  .subscription__features li {
-    display: flex;
-    align-items: center;   /* Keep them vertically aligned */
-    justify-content: flex-start; /* Left-align everything, not centered */
-    gap: 8px;
-    width: 100%;          /* Ensures each list item spans 100% width */
+  .subscription__plan-name {
     font-size: 14px;
   }
-  
-  .subscription__icon {
-    width: 16px;
-    height: 16px;
-    fill: #fff;
-  }
-  
-  /* Footer pinned at bottom if content is short, 
-     otherwise you scroll to it. */
-  .subscription__footer {
-    flex-shrink: 0;
-    padding: 16px;
-    background: #0F0F0F;
-    text-align: center;
-  }
-  
-  .subscription__footer-upgrade {
-    display: inline-flex;       /* or "flex" */
-    justify-content: center;    /* horizontally center content */
-    align-items: center;        /* vertically center content */
-    vertical-align: middle;
-    gap: 8px;                   /* spacing between icon and text */
-    /* Other existing styles */
-    background: #a099ff;
-    color: #0f0f0f;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 14px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    max-width: 340px;
-  }
-  
-  
-  .subscription__footer-upgrade-icon {
-    width: 20px;
-    height: 20px;
-  }
-  
-  .subscription__footer-text {
-    margin-top: 8px;
+  .subscription__plan-price {
     font-size: 12px;
-    opacity: 0.8;
   }
-  
-  /* Mobile adjustments */
-  @media (max-width: 480px) {
-    .subscription__title {
-      font-size: 18px;
-    }
-    .subscription__plan-name {
-      font-size: 14px;
-    }
-    .subscription__plan-price {
-      font-size: 12px;
-    }
-  }
-  
+}

@@ -1,157 +1,158 @@
 <!DOCTYPE html>
 <html lang="tr">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Abonelik Ekranı</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link 
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
-/>
-  <link rel="stylesheet" href="https://unpkg.com/pretty-checkbox/dist/pretty-checkbox.min.css" />
-</head>
-<body>
-
-<div class="subscription">
-  <!-- Header -->
-  <header class="subscription__header">
-    <button class="subscription__header-back" aria-label="Geri">
-      <svg 
-        xmlns="http://www.w3.org/2000/svg" 
-        width="24" height="24" 
-        viewBox="0 0 24 24" fill="none"
-      >
-        <path 
-          d="M15 6L9 12L15 18" 
-          stroke="currentColor" 
-          stroke-width="2" 
-          stroke-linecap="round" 
-          stroke-linejoin="round"
-        />
-      </svg>
-    </button>
-    <!-- Title with "Pro" badge -->
-    <h1 class="subscription__title">
-      MusicAI 
-      <span class="subscription__title-badge">
-        PRO
-        </span>
-    </h1>
-  </header>
-  
-  <!-- Main content area -->
-  <main class="subscription__content">
-    <!-- Subheading -->
-    <p class="subscription__subtitle">
-      MusicAI Uygulamasının tadını çıkar!
-    </p>
-
-    <!-- Plan selection card -->
-    <div class="subscription__plan-card">
-      <!-- Monthly -->
-        <label class="subscription__plan-option">
-        <div class="pretty p-icon p-round p-smooth">
-        <input type="radio" name="plan" value="monthly" />
-        <div class="state p-success">
-            <i class="icon mdi mdi-check"></i>
-            <label></label>
-        </div>
-        </div>
-        
-        <div class="subscription__plan-info">
-            <!-- A single row that has 100% width -->
-            <div class="subscription__plan-row">
-            <div>Aylık</div> 
-            </div>
-            <!-- Price on its own line below -->
-            <div class="subscription__plan-price">₺3.99 / aylık</div>
-        </div>
-    </label>
-    
-      <!-- Yearly -->
-    <label class="subscription__plan-option subscription__plan-option--selected">
-    <div class="pretty p-icon p-round p-smooth">
-      <input type="radio" name="plan" value="yearly" checked />
-      <div class="state p-success">
-        <i class="icon mdi mdi-check"></i>
-        <label></label>
-      </div>
-    </div>
-  
-    <div class="subscription__plan-info">
-      <div class="subscription__plan-row">
-        <div>Yıllık</div>
-        
-      </div>
-      <div class="subscription__plan-price">₺19.99 / yıllık</div>
-    </div>
-
-    <span class="subscription__plan-tag">AVANTAJLI</span>
-  </label>
-  
-    </div>
-
-    <!-- Features list -->
-    <h2 class="subscription__section-title">İÇİNDEKİLER</h2>
-    <ul class="subscription__features">
-      <li>
-        <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
-        </svg>
-        Lorem ipsum dolor sit amet
-      </li>
-      <li>
-        <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
-        </svg>
-        Lorem ipsum dolor sit amet
-      </li>
-      <li>
-        <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
-        </svg>
-        Lorem ipsum dolor sit amet
-      </li>
-      <li>
-        <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
-        </svg>
-        Lorem ipsum dolor sit amet
-      </li>
-      <li>
-        <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
-        </svg>
-        Lorem ipsum dolor sit amet
-      </li>
-      <li>
-        <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
-        </svg>
-        Lorem ipsum dolor sit amet
-      </li>
-    </ul>
-  </main>
-
-    <!-- Footer with button and small text -->
-    <footer class="subscription__footer">
-        <button class="subscription__footer-upgrade">
-            <img 
-                class="profile__avatar-edit-icon"
-                src="fi_66834.svg" 
-                alt="Camera Icon" 
-                style="width: 16px; height: 16px;"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Abonelik Ekranı</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/pretty-checkbox/dist/pretty-checkbox.min.css" />
+  </head>
+  <body>
+    <div class="subscription">
+      <header class="subscription__header">
+        <button 
+          class="subscription__back-button" 
+          aria-label="Geri"
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none"
+          >
+            <path 
+              d="M15 6L9 12L15 18" 
+              stroke="currentColor" 
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"
             />
-            <div>Hemen Yükselt</div>
+          </svg>
+        </button>
+        <h1 class="subscription__title">
+          MusicAI 
+          <span class="subscription__badge">
+            PRO
+          </span>
+        </h1>
+      </header>
+      
+      <main class="subscription__content">
+        <p class="subscription__subtitle">
+          MusicAI Uygulamasının tadını çıkar!
+        </p>
+        <div class="subscription__plan-card">
+          <label class="subscription__plan-option">
+            <div class="pretty p-icon p-round p-smooth">
+              <input 
+                type="radio" 
+                name="plan" 
+                value="monthly" 
+              />
+              <div class="state p-success">
+                <i class="icon mdi mdi-check"></i>
+                <label></label>
+              </div>
+            </div>
+            <div class="subscription__plan-info">
+              <div class="subscription__plan-row">
+                <div>Aylık</div> 
+              </div>
+              <div class="subscription__plan-price">
+                ₺3.99 / aylık
+              </div>
+            </div>
+          </label>
+          
+          <label class="subscription__plan-option subscription__plan-option--selected">
+            <div class="pretty p-icon p-round p-smooth">
+              <input 
+                type="radio" 
+                name="plan" 
+                value="yearly" 
+                checked
+              />
+              <div class="state p-success">
+                <i class="icon mdi mdi-check"></i>
+                <label></label>
+              </div>
+            </div>
+            <div class="subscription__plan-info">
+              <div class="subscription__plan-row">
+                <div>Yıllık</div>
+              </div>
+              <div class="subscription__plan-price">
+                ₺19.99 / yıllık
+              </div>
+            </div>
+
+            <span class="subscription__plan-tag">
+              AVANTAJLI
+            </span>
+          </label>
+        </div>
+
+        <h2 class="subscription__section-title">
+          İÇİNDEKİLER
+        </h2>
+        <ul class="subscription__features">
+          <li class="subscription__feature-item">
+            <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
+            </svg>
+            Lorem ipsum dolor sit amet
+          </li>
+          <li class="subscription__feature-item">
+            <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
+            </svg>
+            Lorem ipsum dolor sit amet
+          </li>
+          <li class="subscription__feature-item">
+            <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
+            </svg>
+            Lorem ipsum dolor sit amet
+          </li>
+          <li class="subscription__feature-item">
+            <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
+            </svg>
+            Lorem ipsum dolor sit amet
+          </li>
+          <li class="subscription__feature-item">
+            <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
+            </svg>
+            Lorem ipsum dolor sit amet
+          </li>
+          <li class="subscription__feature-item">
+            <svg class="subscription__icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M13 2L2 13h6v9l9-11h-6l2-9z"/>
+            </svg>
+            Lorem ipsum dolor sit amet
+          </li>
+        </ul>
+      </main>
+
+      <footer class="subscription__footer">
+        <button class="subscription__upgrade-button">
+          <img 
+            class="subscription__upgrade-icon"
+            src="../../assets/fi_66834.svg" 
+            alt="Camera Icon" 
+          />
+          <div>Hemen Yükselt</div>
         </button>
         <p class="subscription__footer-text">
-            3 gün ücretsiz dene, sonra ₺19.99 / yıllık. 
-            İstediğin zaman iptal et.
+          3 gün ücretsiz dene, sonra ₺19.99 / yıllık. 
+          İstediğin zaman iptal et.
         </p>
-    </footer>
-</div>
+      </footer>
+    </div>
 
-<script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
