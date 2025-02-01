@@ -5,6 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Abonelik Ekranı</title>
   <link rel="stylesheet" href="styles.css" />
+  <link 
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css"
+/>
+  <link rel="stylesheet" href="https://unpkg.com/pretty-checkbox/dist/pretty-checkbox.min.css" />
 </head>
 <body>
 
@@ -44,19 +49,31 @@
     <div class="subscription__plan-card">
       <!-- Monthly -->
       <label class="subscription__plan-option">
-        <input type="radio" name="plan" checked />
+        <div class="pretty p-icon p-round p-smooth">
+            <input type="radio" name="plan" value="monthly" />
+            <div class="state p-success">
+                <i class="icon mdi mdi-check"></i>
+                <label>Aylık</label>
+            </div>
+        </div>
+    
         <div class="subscription__plan-info">
-          <div class="subscription__plan-name">Aylık</div>
           <div class="subscription__plan-price">₺3.99 / aylık</div>
         </div>
       </label>
 
       <!-- Yearly -->
       <label class="subscription__plan-option subscription__plan-option--selected">
-        <input type="radio" name="plan" />
+        <div class="pretty p-icon p-round p-smooth">
+            <input type="radio" name="plan" value="yearly" checked />
+            <div class="state p-success">
+                <i class="icon mdi mdi-check"></i>
+                <label>Yıllık</label>
+            </div>
+        </div>
+
         <div class="subscription__plan-info">
           <div class="subscription__plan-name">
-            Yıllık
             <span class="subscription__plan-tag">AVANTAJLI</span>
           </div>
           <div class="subscription__plan-price">₺19.99 / yıllık</div>

@@ -117,6 +117,12 @@
         margin-top: 4px;       /* small offset to align with text */
     }
 
+    /* Target the icon background when checked */
+  .pretty.p-icon.p-round.p-smooth input[type="radio"]:checked ~ .state.p-success i.icon {
+    background-color: #fff !important; /* The circle behind the check */
+    color: #000 !important;           /* The check (mdi-check) color */
+  }
+
     .subscription__plan-option--selected {
         background: rgba(255, 255, 255, 0.1);
         border-radius: 8px;
