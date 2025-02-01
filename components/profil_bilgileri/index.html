@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profilini Düzenle</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- The main "profile" Block -->
+  <div class="profile">
+    <!-- Header Element -->
+    <div class="profile__header">
+      <!-- Back button element -->
+      <button class="profile__header-back-button" aria-label="Geri">
+        <svg 
+          width="24" 
+          height="24" 
+          viewBox="0 0 24 24" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path 
+            d="M15 6L9 12L15 18" 
+            stroke="currentColor" 
+            stroke-width="2" 
+            stroke-linecap="round" 
+            stroke-linejoin="round"
+          />
+        </svg>
+      </button>
+      <!-- Subheader text element -->
+      <h1 class="profile__header-subtitle">Profil</h1>
+    </div>
+
+    <!-- Main title element -->
+    <h1 class="profile__title">
+        Profilini Düzenle
+        <svg 
+            class="profile__title-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20" height="20" viewBox="0 0 24 24"
+            fill="currentColor"
+        >
+            <path d="M12 4a4 4 0 110 8 4 4 0 010-8zm0 14c-4 0-8 2-8 4h16c0-2-4-4-8-4z"/>
+        </svg>
+    </h1>
+
+    <!-- Avatar Element -->
+    <div class="profile__avatar">
+      <img 
+        class="profile__avatar-image"
+        src="./images (1).png" 
+        alt="Avatar"
+      />
+      <div class="profile__avatar-edit" id="avatar-edit">
+        <!-- Camera icon (separate Element) -->
+        <img 
+          class="profile__avatar-edit-icon"
+          src="camera.svg" 
+          alt="Camera Icon" 
+          style="width: 14px; height: 14px;"
+        />
+      </div>
+    </div>
+
+    <!-- Form Element -->
+    <form class="profile__form">
+      <div class="profile__form-group">
+        <img 
+          class="profile__form-icon" 
+          src="./user.svg" 
+          alt="User Icon"
+        />
+        <input 
+          class="profile__form-input" 
+          id="fullName" 
+          type="text" 
+          placeholder="Ad Soyad" 
+        />
+      </div>
+
+      <div class="profile__form-group">
+        <img 
+          class="profile__form-icon" 
+          src="./call.svg" 
+          alt="Phone Icon"
+        />
+        <input 
+          class="profile__form-input" 
+          id="phoneNumber" 
+          type="text" 
+          placeholder="Telefon Numarası" 
+        />
+      </div>
+
+      <div class="profile__form-group">
+        <img 
+          class="profile__form-icon" 
+          src="./sms.svg" 
+          alt="Email Icon" 
+        />
+        <input 
+          class="profile__form-input" 
+          id="emailAddress" 
+          type="email" 
+          placeholder="Email"
+        />
+      </div>
+    </form>
+
+  </div> <!-- end .profile -->
+
+  <!-- Footer (pinned at bottom) could be another Element or a separate Block -->
+    <div class="profile__footer">
+        <button type="button" class="profile__footer-button">
+            Güncelle
+        </button>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
