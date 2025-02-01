@@ -7,108 +7,80 @@
   <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
+  <div class="settings-page">
+    <header class="settings-page__header">
+      <h1 class="settings-page__title">Ayarlar</h1>
+    </header>
 
-<div class="settings-page">
-  <!-- Header -->
-  <header class="settings-header">
-    <h1>Ayarlar</h1>
-  </header>
+    <div class="settings-page__card settings-page__card--profile">
+      <div class="settings-page__profile-left">
+        <img src="./images (1).png" alt="Avatar" class="settings-page__avatar"/>
+        <span class="settings-page__name">Lorem Ipsum</span>
+      </div>
+      <span class="settings-page__chevron">&gt;</span>
+    </div>
 
-  <!-- Profile Card -->
-  <div class="settings-card profile-card" style="padding: 16px 16px;">
-    <div class="profile-left">
-      <!-- Replace with your actual avatar image -->
-      <img src="./images (1).png" alt="Avatar" class="profile-avatar"/>
-      <span class="profile-name">Lorem Ipsum</span>
+    <div class="settings-page__card">
+      <div class="settings-page__item">
+        <span>Abonelikler</span>
+        <span class="settings-page__chevron">&gt;</span>
+      </div>
+      <div class="settings-page__item">
+        <span>Kayıtlı Kartlarım</span>
+        <span class="settings-page__chevron">&gt;</span>
+      </div>
     </div>
-    <span class="chevron">&gt;</span>
-  </div>
 
-  <!-- First Card (Abonelikler, Kayıtlı Kartlarım) -->
-  <div class="settings-card">
-    <div class="settings-item">
-      <span>Abonelikler</span>
-      <span class="chevron">&gt;</span>
+    <div class="settings-page__card">
+      <div class="settings-page__item">
+        <span>Bildirimler</span>
+        <label class="settings-page__switch">
+          <input type="checkbox" checked/>
+          <span class="settings-page__slider settings-page__slider--round"></span>
+        </label>
+      </div>
+      <div class="settings-page__item">
+        <span>Dil</span>
+        <div class="settings-page__language-right">
+          <span>English</span>
+          <span class="settings-page__chevron">&gt;</span>
+        </div>
+      </div>
     </div>
-    <div class="settings-item">
-      <span>Kayıtlı Kartlarım</span>
-      <span class="chevron">&gt;</span>
-    </div>
-  </div>
 
-  <!-- Second Card (Bildiriler switch, Dil selection) -->
-  <div class="settings-card">
-    <!-- Bildirimler with a toggle -->
-    <div class="settings-item">
-      <span>Bildirimler</span>
-      <label class="switch">
-        <input type="checkbox" checked/>
-        <span class="slider round"></span>
-      </label>
+    <div class="settings-page__card">
+      <div class="settings-page__item">
+        <span>Destek</span>
+        <span class="settings-page__chevron">&gt;</span>
+      </div>
+      <div class="settings-page__item">
+        <span>Gizlilik Politikası</span>
+        <span class="settings-page__chevron">&gt;</span>
+      </div>
+      <div class="settings-page__item">
+        <span>Bizi Değerlendirin</span>
+        <span class="settings-page__chevron">&gt;</span>
+      </div>
     </div>
-    <!-- Language selection -->
-    <div class="settings-item">
-      <span>Dil</span>
-      <div class="language-right">
-        <span>English</span>
-        <span class="chevron">&gt;</span>
+
+    <div class="settings-page__card settings-page__card--logout">
+      <div class="settings-page__item settings-page__item--logout">
+        <span>Çıkış Yap</span>
+        <span class="settings-page__chevron">&gt;</span>
       </div>
     </div>
   </div>
 
-  <!-- Third Card (Destek, Gizlilik Politikası, Bizi Değerlendirin) -->
-  <div class="settings-card">
-    <div class="settings-item">
-      <span>Destek</span>
-      <span class="chevron">&gt;</span>
-    </div>
-    <div class="settings-item">
-      <span>Gizlilik Politikası</span>
-      <span class="chevron">&gt;</span>
-    </div>
-    <div class="settings-item">
-      <span>Bizi Değerlendirin</span>
-      <span class="chevron">&gt;</span>
-    </div>
-  </div>
-
-  <!-- Logout Row -->
-  <div class="settings-card logout-row">
-    <div class="settings-item logout-text">
-      <span>Çıkış Yap</span>
-      <span class="chevron">&gt;</span>
-    </div>
-  </div>
-
-</div> <!-- end .settings-page -->
-
-<!-- Bottom Nav (example placeholders) -->
-<footer class="bottom-nav">
-  <button class="nav-btn">
-    <img 
-        class="profile__avatar-edit-icon"
-        src="home (1).svg" 
-        alt="Camera Icon" 
-        style="width: 24px; height: 24px;"
-    />
-  </button>
-  <button class="nav-btn">
-    <img 
-        class="profile__avatar-edit-icon"
-        src="chart.svg" 
-        alt="Camera Icon" 
-        style="width: 24px; height: 24px;"
-    />
-  </button>
-  <button class="nav-btn active">
-    <img 
-        class="profile__avatar-edit-icon"
-        src="Active.svg" 
-        alt="Camera Icon" 
-        style="width: 24px; height: 24px;"
-    />
-  </button>
-</footer>
-
+  <footer class="bottom-nav">
+    <button class="bottom-nav__btn">
+      <img class="bottom-nav__icon" src="home (1).svg" alt="Home Icon"/>
+    </button>
+    <button class="bottom-nav__btn">
+      <img class="bottom-nav__icon" src="chart.svg" alt="Chart Icon"/>
+    </button>
+    <button class="bottom-nav__btn bottom-nav__btn--active">
+      <img class="bottom-nav__icon" src="Active.svg" alt="Active Icon"/>
+    </button>
+  </footer>
 </body>
 </html>

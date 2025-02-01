@@ -1,169 +1,163 @@
-/* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Overall dark background + font settings */
-  body {
-    background: #0f0f0f;
-    font-family: Arial, sans-serif;
-    color: #fff;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    /* So footer can appear at bottom if needed */
-  }
-  
-  /* 
-    Container for the settings content 
-    (excluding the bottom nav)
-  */
-  .settings-page {
-    flex: 1;
-    /* Optionally, a gradient from top to dark bottom */
-    background: linear-gradient(180deg, #141414 0%, #0f0f0f 60%);
-    padding-bottom: 80px; /* space for bottom nav */
-  }
-  
-  /* Header */
-  .settings-header {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .settings-header h1 {
-    font-size: 18px;
-  }
-  
-  /* Reusable card style */
-  .settings-card {
-    background: #1c1c1e;
-    border-radius: 12px;
-    margin: 16px 16px; /* horizontal + slight vertical spacing */
-    padding: 8px 16px;
-  }
-  
-  /* Profile card specifics */
-  .profile-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Left side of profile card */
-  .profile-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .profile-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
-  
-  .profile-name {
-    font-size: 16px;
-  }
-  
-  /* The arrow on the right */
-  .chevron {
-    color: #6f6f6f; /* subtle grey */
-    font-size: 20px;
-  }
-  
-  /* Each row (like "Abonelikler >") */
-  .settings-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-  }
-  
-  /* Remove bottom border on the last item in a card */
-  .settings-item:last-child {
-    border-bottom: none;
-  }
-  
-  /* Logout row - red text */
-  .logout-row {
-    background: #1c1c1e;
-  }
-  
-  .logout-text span:first-child {
-    color: #ff4f4f; /* red color for "Çıkış Yap" */
-  }
-  
-  /* Switch (toggle) style for "Bildirimler" */
-  .switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 22px;
-  }
-  .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: #3a3a3c;
-    transition: .4s;
-    border-radius: 16px;
-  }
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 50%;
-  }
-  input:checked + .slider {
-    background-color: #8e5cd4; /* purple-ish when ON */
-  }
-  input:checked + .slider:before {
-    transform: translateX(18px);
-  }
-  
-  /* "Dil" row right side layout for "English >" */
-  .language-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  
-  /* Bottom Nav at the bottom of the screen */
-  .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0; right: 0;
-    background: #1c1c1e;
-    height: 60px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .nav-btn {
-    background: none;
-    border: none;
-    color: #888;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  .nav-btn.active {
-    color: #fff;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0f0f0f;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.settings-page {
+  flex: 1;
+  background: linear-gradient(180deg, #141414 0%, #0f0f0f 60%);
+  padding-bottom: 80px;
+}
+
+.settings-page__header {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.settings-page__title {
+  font-size: 18px;
+}
+
+.settings-page__card {
+  background: #1c1c1e;
+  border-radius: 12px;
+  margin: 16px;
+  padding: 8px 16px;
+}
+
+.settings-page__card--profile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-page__profile-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-page__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.settings-page__name {
+  font-size: 16px;
+}
+
+.settings-page__chevron {
+  color: #6f6f6f;
+  font-size: 20px;
+}
+
+.settings-page__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+}
+
+.settings-page__item:last-child {
+  border-bottom: none;
+}
+
+.settings-page__card--logout {
+  background: #1c1c1e;
+}
+
+.settings-page__item--logout span:first-child {
+  color: #ff4f4f;
+}
+
+.settings-page__switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.settings-page__switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.settings-page__slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3a3a3c;
+  transition: .4s;
+  border-radius: 16px;
+}
+
+.settings-page__slider--round:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+.settings-page__switch input:checked + .settings-page__slider {
+  background-color: #8e5cd4;
+}
+
+.settings-page__switch input:checked + .settings-page__slider--round:before {
+  transform: translateX(18px);
+}
+
+.settings-page__language-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1c1c1e;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.bottom-nav__btn {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.bottom-nav__btn--active {
+  color: #fff;
+}
+
+.bottom-nav__icon {
+  width: 24px;
+  height: 24px;
+}
