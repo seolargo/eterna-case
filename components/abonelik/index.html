@@ -156,3 +156,21 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+<script>
+  // Wait until the DOM is fully loaded
+  document.addEventListener("DOMContentLoaded", function() {
+    // Select the profile card element using its BEM modifier class
+    var backElement = document.querySelector('.subscription__back-button');
+
+    // Ensure the element exists before attaching the event listener
+    if (backElement) {
+      // Add a click event listener to the profile card
+      backElement.addEventListener('click', function() {
+        // Redirect to the profile page
+        // Update the URL below to match the actual profile page route in your application
+        window.location.href = '../ayarlar/index.html';
+      });
+    }
+  });
+</script>

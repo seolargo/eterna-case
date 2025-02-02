@@ -104,3 +104,39 @@
         </footer>
     </body>
 </html>
+
+<script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select the profile card element using its BEM modifier class
+        var profileCard = document.querySelector('.settings-page__card--profile');
+  
+        // Ensure the element exists before attaching the event listener
+        if (profileCard) {
+            // Add a click event listener to the profile card
+            profileCard.addEventListener('click', function() {
+                // Redirect to the profile page
+                // Update the URL below to match the actual profile page route in your application
+                window.location.href = '../profil_bilgileri/index.html';
+            });
+        }
+    });
+</script>
+
+<script>
+    // Wait until the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select the profile card element using its BEM modifier class
+        var abonelikCard = document.querySelector('.first-card');
+  
+        // Ensure the element exists before attaching the event listener
+        if (abonelikCard) {
+            // Add a click event listener to the profile card
+            abonelikCard.addEventListener('click', function() {
+                // Redirect to the profile page
+                // Update the URL below to match the actual profile page route in your application
+                window.location.href = '../abonelik/index.html';
+            });
+        }
+    });
+</script>
