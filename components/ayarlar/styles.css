@@ -187,13 +187,13 @@ body {
 }
 
 .bottom-nav {
-  position: fixed;
+  position: relative;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(28, 28, 30, 0.9);
   height: 56px;
-  width: 93%;
+  width: 98%;
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
