@@ -40,9 +40,9 @@ body {
   padding: 14px;
   height: 48px;
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   cursor: pointer;
-  background: #a099ff;
+  background: var(--button-primary, #A099FF);
   color: #333;
   transition: background 0.3s ease;
   letter-spacing: -0.4px;
@@ -56,10 +56,13 @@ body {
   text-align: center;
   text-underline-position: from-font;
   text-decoration-skip-ink: none;
-}
 
-.profile__footer-button:hover {
-  background: #b2a3ff;
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 12px;
+  padding-left: 16px;
+
+  gap: 12px;
 }
 
 .profile__header {
