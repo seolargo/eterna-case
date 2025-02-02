@@ -22,23 +22,42 @@ body {
 .settings-page__header {
   text-align: center;
   margin-top: 30px;
+
+  height: 21px;
 }
 
 .settings-page__title {
-  font-size: 18px;
+  /* font-family: Inter; */
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.4000000059604645px;
+  text-align: center;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .settings-page__card {
   background: #1c1c1e;
   border-radius: 12px;
   margin: 16px;
-  padding: 8px 16px;
+  padding: 0px 16px;
+}
+
+.first-card {
+  height: 88px;
+}
+
+.second-card {
+  height: 132px;
 }
 
 .settings-page__card--profile {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  height: 72px;
 }
 
 .settings-page__profile-left {
@@ -48,19 +67,30 @@ body {
 }
 
 .settings-page__avatar {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .settings-page__name {
-  font-size: 16px;
+  height: 18px;
+  /* font-family: Inter; */
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.4000000059604645px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .settings-page__chevron {
   color: #6f6f6f;
   font-size: 20px;
+
+  width: 20px;
+  height: 20px;
 }
 
 .settings-page__item {
@@ -68,6 +98,15 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
+
+  /* font-family: Inter; */
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.4000000059604645px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .settings-page__item:last-child {
@@ -76,6 +115,12 @@ body {
 
 .settings-page__card--logout {
   background: #1c1c1e;
+
+  height: 52px;
+}
+
+.third-card {
+  padding: 16px 0px;
 }
 
 .settings-page__item--logout span:first-child {
@@ -131,6 +176,14 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  
+  /* font-family: Poppins; */
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
 }
 
 .bottom-nav {
@@ -139,8 +192,8 @@ body {
   left: 50%;
   transform: translateX(-50%);
   background: rgba(28, 28, 30, 0.9);
-  height: 60px;
-  width: 97%;
+  height: 56px;
+  width: 93%;
   border-radius: 20px;
   display: flex;
   justify-content: space-around;
@@ -162,8 +215,8 @@ body {
 }
 
 .bottom-nav__icon {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease;
 }
 
